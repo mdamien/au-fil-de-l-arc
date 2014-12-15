@@ -124,7 +124,7 @@ def index(path):
     return send_file(path, mimetype=ctype)
 
 
-def test(port=5000, debug=False, helper=None):
+def test(port=5000, debug=True, helper=None):
     if helper:
         mod = importlib.import_module(helper)
         if hasattr(mod, 'add_helpers'):
@@ -132,7 +132,7 @@ def test(port=5000, debug=False, helper=None):
             mod.add_helpers(app)
 
     app.jinja_env.cache = {}
-    app.run(port=port, debug=debug, use_reloader=False)
+    app.run(port=port, debug=debug, use_reloader=True, host='0.0.0.0')
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
