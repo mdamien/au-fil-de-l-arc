@@ -20,7 +20,7 @@ font-size: 21px;
   </head>
   <body>
     <header class="bar bar-nav">
-      <h1 class="title">Au fil de l'ARC</h1>
+      <h1 class="title">{% block title %}Au fil de l'ARC{% endblock %}</h1>
     </header>
 {% block header %}{% endblock %}
     <div class="content">

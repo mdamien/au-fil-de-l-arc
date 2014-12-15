@@ -1,6 +1,62 @@
 {% extends 'base.html' %}
 
+{% block title %}Station d'epuration{% endblock %}
+
+{% block header %}
+<div class="bar bar-standard bar-header-secondary">
+<div class="segmented-control">
+  <a class="control-item active" href="#description">
+      Description 
+  </a>
+  <a class="control-item" href="#activities">
+     Activites
+  </a>
+</div>
+</div>
+{% endblock %}
+
 {% block content %}
-<h1>Station d'epuration</h1>
-<img class="media-object pull-left" src="http://placehold.it/95x95/e2dbbe">
+  <span id="description" class="control-content active">
+<div class="card" style="text-align:center">
+<img class="media-object" src="http://placehold.it/100/e2dbbe">
+<img class="media-object" src="http://placehold.it/100/e2dbbe">
+<img class="media-object" src="http://placehold.it/100/e2dbbe">
+</div>
+<div class="card">
+<h6>Fonctionnement</h6>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+<div class="card">
+<h6>Histoire</h6>
+      <img class="media-object pull-right" src="http://placehold.it/42x42/e2dbbe">
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+<div class="card">
+<h6>Culture</h6>
+      <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+</span>
+  <span id="activities" class="control-content">
+<ul class="table-view">
+  <li class="table-view-cell">
+    <a class="navigate-right">
+        Visite virtuelle
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a class="navigate-right">
+        Quizz
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a class="navigate-right">
+       Chasse au tresor 
+    </a>
+  </li>
+</ul>
+</span>
 {% endblock %}
