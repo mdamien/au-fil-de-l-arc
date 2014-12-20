@@ -22,11 +22,13 @@
   <span id="map" class="control-content active">
         <iframe width='100%' height='700px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/powershops.k9bpc33d/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoicG93ZXJzaG9wcyIsImEiOiJhYUdRR0t3In0.oTz8RJqED2YEcDRfJYNAOQ'></iframe>
 </span>
+
+
   <span id="list" class="control-content">
 <ul class="table-view">
-{% for item in "Station d'epuration","Centre d'ordonnencement","Barrage","Puit","Pont Neuf","Etang rossignol" %}
+{% for item in "Station d'epuration","Etang rossignol" %}
   <li class="table-view-cell media">
-    <a class="navigate-right" href="point.html">
+    <a class="navigate-right" href="point.html?id=1">
       <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
       <div class="media-body">
         {{ item }}
@@ -36,7 +38,35 @@
   </li>
 {% endfor %}
 </ul>
+
+<ul class="table-view">
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="point.html?id=2">
+      <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+      <div class="media-body">
+        Centre d'innovation
+        <p>Le centre d’innovation occupe une surface de 5 000 m². Ce nouveau bâtiment présente de larges baies vitrées surmontées par des longs panneaux de bois. A l’intérieur, les installations n’ont rien à envier à celles du siège californien d’un célèbre moteur de recherche....</p>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<ul class="table-view">
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="point.html?id=3">
+      <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+      <div class="media-body">
+        Pont Neuf
+        <p>L’année 2010 a vu d’importants chantiers de voirie et le début de la
+        construction du Pont neuf....</p>
+      </div>
+    </a>
+  </li>
+</ul>
+
 </span>
+
+
   <span id="me" class="control-content">
 <ul class="table-view">
   <li class="table-view-cell media">

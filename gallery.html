@@ -5,6 +5,10 @@
 
 
 {% block content %}
+{% set id = request.args.get('id') %}
+{% if id is none %}
+    galary id is empty.
+{% elif id == '1' %} {# Station d'epuration #}
 <div class="slider" style="height:100%" id="mySlider">
   <div class="slide-group">
     <div class="slide">
@@ -18,4 +22,36 @@
     </div>
   </div>
 </div>
+{% elif id == '2' %} {# centre d'innovation #}
+<div class="slider" style="height:100%" id="mySlider">
+  <div class="slide-group">
+    <div class="slide">
+      <img src="img/CI_utc.png">
+    </div>
+    <div class="slide">
+      <img src="img/CI_utc2.png">
+    </div>
+    <div class="slide">
+      <img src="img/CI_utc3.jpg">
+    </div>
+  </div>
+</div>
+{% elif id == '3' %} {# Pont neuf #}
+<div class="slider" style="height:100%" id="mySlider">
+  <div class="slide-group">
+    <div class="slide">
+      <img src="img/pont_neuf_1.jpg">
+    </div>
+    <div class="slide">
+      <img src="img/pont_neuf_2.jpg">
+    </div>
+    <div class="slide">
+      <img src="img/pont_neuf_2.jpg">
+    </div>
+  </div>
+</div>
+{% else %}
+    id : {{ id }} not matched.
+{% endif %}
+
 {% endblock %}
