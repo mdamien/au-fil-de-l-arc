@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
+{{ super() }}
 <div class="bar bar-standard bar-header-secondary">
 <div class="segmented-control">
   <a class="control-item active" href="#map">
@@ -23,7 +24,7 @@
 </span>
   <span id="list" class="control-content">
 <ul class="table-view">
-{% for item in "Station d'epuration","Centre d'ordonnencement","Barrage" %}
+{% for item in "Station d'epuration","Centre d'ordonnencement","Barrage","Puit","Pont Neuf","Etang rossignol" %}
   <li class="table-view-cell media">
     <a class="navigate-right" href="point.html">
       <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
@@ -34,9 +35,34 @@
     </a>
   </li>
 {% endfor %}
+</ul>
 </span>
   <span id="me" class="control-content">
-Settings, badges, progresssion, filters, notifications
+<ul class="table-view">
+  <li class="table-view-cell media">
+    <a class="navigate-right">
+      <div class="media-body">
+        Badges
+        <span class="badge">5</span>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right">
+      <span class="media-object pull-left icon icon-pages"></span>
+      <div class="media-body">
+        Filtrer
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell">
+    Notifications
+    <div class="toggle">
+      <div class="toggle-handle"></div>
+    </div>
+  </li>
+</ul>
+
 </span>
 </div>
 {% endblock %}

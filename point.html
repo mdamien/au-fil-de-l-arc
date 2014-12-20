@@ -3,13 +3,17 @@
 {% block title %}Station d'epuration{% endblock %}
 
 {% block header %}
+{{ super() }}
 <div class="bar bar-standard bar-header-secondary">
 <div class="segmented-control">
   <a class="control-item active" href="#description">
       Description 
   </a>
   <a class="control-item" href="#activities">
-     Activites
+     Activités
+  </a>
+  <a class="control-item" href="#comments">
+     Partage d'éxpérience
   </a>
 </div>
 </div>
@@ -18,22 +22,24 @@
 {% block content %}
   <span id="description" class="control-content active">
 <div class="card" style="text-align:center">
-<img class="media-object" src="http://placehold.it/100/e2dbbe">
-<img class="media-object" src="http://placehold.it/100/e2dbbe">
-<img class="media-object" src="http://placehold.it/100/e2dbbe">
+{% for i in range(3) %}
+<a href="gallery.html">
+  <img class="media-object" width=100 src="img/img2.jpg"/>
+</a>
+{% endfor %}
 </div>
-<div class="card">
+<div class="card marge">
 <h6>Fonctionnement</h6>
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
 </div>
-<div class="card">
+<div class="card marge">
 <h6>Histoire</h6>
       <img class="media-object pull-right" src="http://placehold.it/42x42/e2dbbe">
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
 </div>
-<div class="card">
+<div class="card marge">
 <h6>Culture</h6>
       <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
@@ -59,4 +65,15 @@
   </li>
 </ul>
 </span>
+  <span id="comments" class="control-content">
+  {% for item in "Paysage magnifique","A voir aux alentours","Souvenirs des 5eme C de Saint-Joseph" %}
+    <li class="table-view-cell media">
+        <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+        <div class="media-body">
+          {{ item }}
+          <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        </div>
+    </li>
+  {% endfor %}
+  </span>
 {% endblock %}
