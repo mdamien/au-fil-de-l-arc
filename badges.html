@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Mes Badges{% endblock %}
+
+{% block header %}
+{{ super() }}
+<div class="bar bar-standard bar-header-secondary">
+<div class="segmented-control">
+  <a class="control-item active" href="#finished">
+      Badges obtenus 
+  </a>
+  <a class="control-item" href="#unfinished">
+     Badges à gagner 
+  </a>
+</div>
+</div>
+{% endblock %}
+
+{% block content %}
+  <span id="finished" class="control-content active">
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" src="img/bg_gratuation.png">
+      <div class="media-body">
+        Diplomé
+        <p>Vous avez fini tous les cours sur le site!</p>
+      </div>
+</div>
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" src="img/bg_camera.png">
+      <div class="media-body">
+        Photographe
+        <p>Vous avez téléchargé 100 photos!</p>
+      </div>
+</div>
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" src="img/bg_100.png">
+      <div class="media-body">
+        Quiz 100
+        <p>Vous avez réussi 100 quizs!</p>
+      </div>
+</div>
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" src="img/bg_point_10.png">
+      <div class="media-body">
+        10 Sites
+        <p>Vous avez visité 10 sites différents!</p>
+      </div>
+</div>
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" src="img/bg_qr.jpg">
+      <div class="media-body">
+        QR Code master
+        <p>Vous avez scanné tous les QR Code!</p>
+      </div>
+</div>
+</span>
+  <span id="unfinished" class="control-content">
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" id="greyImage" src="img/bg_film.png">
+      <div class="media-body">
+        Film Master
+        <p>Filmer 10 vidéo pour gagner!</p>
+      </div>
+</div>
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" id="greyImage" src="img/bg_nfc.jpg">
+      <div class="media-body">
+        NFC master
+        <p>Scanner tous les marquer NFC dans l'ARC!</p>
+      </div>
+</div>
+<div class="card" style="text-align:center">
+	<img class="media-object pull-left badge_img" id="greyImage" src="img/bg_book.png">
+      <div class="media-body">
+        Critique
+        <p>Publier un review sur le site</p>
+      </div>
+</div>
+</span>
+{% endblock %}

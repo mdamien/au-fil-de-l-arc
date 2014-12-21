@@ -1,3 +1,13 @@
 .card.marge {
 padding: 4px 16px;
 }
+
+.badge_img {
+	width:54px;
+    height: auto;
+}
+
+#greyImage {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
