@@ -18,12 +18,15 @@
 </div>
 </div>
 {% endblock %}
-
 {% block content %}
+{% set id = request.args.get('id') %}
+{% if id is none %}
+    galary id is empty.
+{% elif id == '1' %} {# Station d'epuration #}
   <span id="description" class="control-content active">
 <div class="card" style="text-align:center">
 {% for i in range(3) %}
-<a href="gallery.html">
+<a href="gallery.html?id=1">
   <img class="media-object" width=100 src="img/img2.jpg"/>
 </a>
 {% endfor %}
@@ -76,4 +79,123 @@
     </li>
   {% endfor %}
   </span>
+
+{% elif id == '2' %} {# centre d'innovation #}
+  <span id="description" class="control-content active">
+<div class="card" style="text-align:center">
+{% for i in range(3) %}
+<a href="gallery.html?id=2">
+  <img class="media-object" width=100 src="img/CI_utc3.jpg"/>
+</a>
+{% endfor %}
+</div>
+<div class="card marge">
+<h6>Fonctionnement</h6>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+<div class="card marge">
+<h6>Histoire</h6>
+      <img class="media-object pull-right" src="http://placehold.it/42x42/e2dbbe">
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+<div class="card marge">
+<h6>Culture</h6>
+      <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+</span>
+  <span id="activities" class="control-content">
+<ul class="table-view">
+  <li class="table-view-cell">
+    <a class="navigate-right">
+        Visite virtuelle
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a class="navigate-right">
+        Quizz
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a class="navigate-right">
+       Chasse au tresor 
+    </a>
+  </li>
+</ul>
+</span>
+  <span id="comments" class="control-content">
+  {% for item in "Paysage magnifique","A voir aux alentours","Souvenirs des 5eme C de Saint-Joseph" %}
+    <li class="table-view-cell media">
+        <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+        <div class="media-body">
+          {{ item }}
+          <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        </div>
+    </li>
+  {% endfor %}
+  </span>
+{% elif id == '3' %} {# Pont neuf #}
+  <span id="description" class="control-content active">
+<div class="card" style="text-align:center">
+{% for i in range(3) %}
+<a href="gallery.html?id=3">
+  <img class="media-object" width=100 src="img/pont_neuf_2.jpg"/>
+</a>
+{% endfor %}
+</div>
+<div class="card marge">
+<h6>Fonctionnement</h6>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+<div class="card marge">
+<h6>Histoire</h6>
+      <img class="media-object pull-right" src="http://placehold.it/42x42/e2dbbe">
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+<div class="card marge">
+<h6>Culture</h6>
+      <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+</div>
+</span>
+  <span id="activities" class="control-content">
+<ul class="table-view">
+  <li class="table-view-cell">
+    <a class="navigate-right">
+        Visite virtuelle
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a class="navigate-right">
+        Quizz
+    </a>
+  </li>
+  <li class="table-view-cell">
+    <a class="navigate-right">
+       Chasse au tresor 
+    </a>
+  </li>
+</ul>
+</span>
+  <span id="comments" class="control-content">
+  {% for item in "Paysage magnifique","A voir aux alentours","Souvenirs des 5eme C de Saint-Joseph" %}
+    <li class="table-view-cell media">
+        <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
+        <div class="media-body">
+          {{ item }}
+          <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        </div>
+    </li>
+  {% endfor %}
+  </span>
+{% else %}
+    id : {{ id }} not matched.
+{% endif %}
 {% endblock %}
+
