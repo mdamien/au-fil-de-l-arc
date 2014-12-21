@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
-
-{% block title %}Station d'epuration{% endblock %}
+{% set id = request.args.get('id') %}
+{% import 'comments.html' as comments %}
+{% if id is none %}
+    galary id is empty.
+{% elif id == '1' %}
+{% set name = "Station d'epuration" %}
+{% elif id == '2' %}
+{% set name = "Centre d'innovation" %}
+{% elif id == '3' %}
+{% set name = 'Pont neuf' %}
+{% else %}
+{% set name = 'Unknown' %}
+{% endif %}
+{% block title %}{{ name }}{% endblock %}
 
 {% block header %}
 {{ super() }}
@@ -19,7 +31,7 @@
 </div>
 {% endblock %}
 {% block content %}
-{% set id = request.args.get('id') %}
+
 {% if id is none %}
     galary id is empty.
 {% elif id == '1' %} {# Station d'epuration #}
@@ -48,6 +60,7 @@
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
         <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
 </div>
+{{ comments.comment() }}
 </span>
   <span id="activities" class="control-content">
 <ul class="table-view">
@@ -160,9 +173,16 @@
 <div class="card marge">
 <h6>Culture</h6>
       <img class="media-object pull-left" src="http://placehold.it/42x42/e2dbbe">
-        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
-        <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. lorem ipsum dolor sit amet.</p>
+        <p>Pour valoriser le cœur d’agglomération et la rivière, les
+abords du pont ont été aménagées avec le soutien financier
+du Conseil Régional de Picardie et du Conseil Général
+de l’Oise. Lieu de promenade privilégié, le Parc de la berge
+est déjà bien fréquenté par les promeneurs.
+Dans la même optique, la voie cyclable rive gauche a été
+refaite et élargie, alors qu’une nouvelle piste est créée en
+rive droite..</p>
 </div>
+{{ comments.comment() }}
 </span>
   <span id="activities" class="control-content">
 <ul class="table-view">
